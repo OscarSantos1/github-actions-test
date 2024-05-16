@@ -22,3 +22,6 @@ jobs:
           echo "Platform option: ${{ env.platform }}"
           echo "Region option: ${{ env.region }}"
           echo "Account option: ${{ env.account }}"
+      - name: "Display default var"
+        run: |
+          echo "Evento: ${{ toJSON(github.event)}}"
