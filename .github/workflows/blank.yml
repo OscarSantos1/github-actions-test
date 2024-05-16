@@ -10,6 +10,9 @@ jobs:
       platform: aws
       region: us-east-1
       account: 123412341234123
+
+      username: ${{secrets.USERNAME }}
+      password: ${{ secrets.PASSWORD }}
     runs-on: ubuntu-latest
 
     steps:
@@ -17,11 +20,14 @@ jobs:
         run: echo "hello mundo"
 
       - name: "Display env var"
-        if: ${{ env.platform == 'azure'}}
+        # if: ${{ env.platform == 'azure'}}
         run: |
           echo "Platform option: ${{ env.platform }}"
           echo "Region option: ${{ env.region }}"
           echo "Account option: ${{ env.account }}"
+          echo "Username: ${{ env.username }}"
+          echo "Password: ${{ env.password }}"
+
       - name: "Display default var"
         run: |
           echo "Evento: ${{ toJSON(github.event)}}"
