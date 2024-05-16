@@ -27,6 +27,7 @@ jobs:
           echo "Account option: ${{ env.account }}"
           echo "Username: ${{ env.username }}"
           echo "Password: ${{ env.password }}"
+          echo "Project version: ${{ vars.PROJECT_VERSION }}"
 
       - name: "Check good password"
         if: ${{ env.password == 'password'}}
