@@ -28,6 +28,11 @@ jobs:
           echo "Username: ${{ env.username }}"
           echo "Password: ${{ env.password }}"
 
+      - name: "Check good password"
+        if: ${{ env.password == 'password'}}
+        run: |
+          echo "bad passwoord!"
+
       - name: "Display default var"
         run: |
           echo "Evento: ${{ toJSON(github.event)}}"
